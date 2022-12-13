@@ -20,5 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('ticket')->name('ticket')->group(function () {
-    Route::post('', [TicketController::class, 'store'])->name('create.post');
+    Route::post('teste', [TicketController::class, 'store'])->name('create.post');
+});
+Route::prefix('user')->name('user')->group(function () {
+    Route::post('login', [LoginController::class, 'login'])->name('create.user');
 });
